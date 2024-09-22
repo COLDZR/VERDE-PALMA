@@ -1,12 +1,13 @@
-
 * {
     text-decoration: none;
     padding: 0;
     margin: 0;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total e altura */
 }
 
-body{
+body {
     background-color: aliceblue;
+    font-family: Arial, sans-serif; /* Definir uma fonte padrão */
 }
 
 .cabecalho {
@@ -37,15 +38,15 @@ nav ul {
 }
 
 nav ul a {
-    color: #333; 
+    color: #333;
     text-decoration: none;
     font-size: 16px;
-    display: block; 
+    display: block;
     padding: 10px;
 }
 
 nav ul a:hover {
-    color: #000; 
+    color: #000;
 }
 
 header hr {
@@ -54,7 +55,7 @@ header hr {
     border-top: 1px solid #ccc;
 }
 
-
+/* Ajuste responsivo para telas menores */
 @media (max-width: 768px) {
     .cabecalho {
         flex-direction: column;
@@ -73,36 +74,34 @@ header hr {
     }
 }
 
-
-.text-icons{
+.text-icons {
     font-size: 50px;
 }
 
-
+/* Imagens e ícones */
 .imagens-icon {
     padding: 30px;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    flex-wrap: wrap; 
-    gap: 20px; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .icon-item {
-    text-align: center; 
-    margin: 0 10px; 
+    text-align: center;
+    margin: 0 10px;
 }
 
 .icon-item img {
-    width: 100%; 
+    max-width: 100px; /* Limita o tamanho da imagem para telas menores */
     height: auto;
 }
 
 .icon-item .text {
-    margin-top: 10px; 
+    margin-top: 10px;
     font-size: 14px;
 }
-
 
 .quem-somos {
     color: aliceblue;
@@ -112,12 +111,11 @@ header hr {
     width: 100%;
     height: 500px;
     margin: 0 auto;
-    text-align: center; 
+    text-align: center;
     padding: 20px;
     background-image: url("/VERDE-PALMA/assets/C.png");
+    background-size: cover; /* Faz com que a imagem de fundo se ajuste ao container */
 }
-
-
 
 .titulo-qs {
     font-size: 30px;
@@ -125,24 +123,25 @@ header hr {
 }
 
 .conteudo-qs {
-
     font-size: 30px;
-    display: flex; 
-    justify-content: center; 
-    align-items: flex-start; 
-    gap: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 .logo-qs {
-    width: 400px; 
+    width: 100%; /* Responsivo: usa 100% da largura disponível */
+    max-width: 400px; /* Limita o tamanho máximo da imagem */
 }
 
 .conteudo-qs p {
-    width: 60%; 
-    text-align: justify; 
+    width: 100%;
+    max-width: 600px;
+    text-align: justify;
 }
 
-.servicos-title{
+.servicos-title {
     padding: 20px;
     font-size: 40px;
 }
@@ -154,12 +153,13 @@ header hr {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    height: 100%;
     padding: 30px;
-
+    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
 }
 
-.leia-mais{
+.leia-mais {
+    display: flex;
+    justify-content: center;
     align-items: center;
     background-color: aliceblue;
     border-radius: 10px;
@@ -168,68 +168,28 @@ header hr {
     height: 50px;
 }
 
-h2 {
-    text-align: center;
-}
-
-.imgservices {
-    border-radius: 30px;
+.servicos-1, .servicos-2, .servicos-3 {
+    font-size: 20px;
+    padding: 1%;
     width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-.servicos-1 {
-    font-size: 20px;
-    padding: 1%;
-    width: 20%;
-    height: 21%;
+    max-width: 300px;
+    height: auto; /* Remove a altura fixa para telas menores */
     border: solid 1px rgb(255, 255, 255);
     border-radius: 10%;
-    -webkit-box-shadow: 11px 11px 18px -19px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 11px 11px 18px -19px rgba(0, 0, 0, 0.75);
     box-shadow: 11px 11px 18px -19px rgba(0, 0, 0, 0.75);
     text-align: justify;
+    margin-bottom: 20px;
 }
 
-
-.servicos-2 {
-    font-size: 20px;
-    width: 20%;
-    height: 20%;
-    border: solid 1px rgb(255, 255, 255);
-    border-radius: 10%;
-    -webkit-box-shadow: 11px 11px 18px -19px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 11px 11px 18px -19px rgba(0, 0, 0, 0.75);
-    box-shadow: 11px 11px 18px -19px rgba(0, 0, 0, 0.75);
-    padding: 1%;
-    text-align: justify;
-}
-
-.servicos-3 {
-    font-size: 20px;
-    padding: 1%;
-    width: 20%;
-    height: 20%;
-    border: solid 1px rgb(255, 255, 255);
-    border-radius: 10%;
-    -webkit-box-shadow: 11px 11px 18px -19px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 11px 11px 18px -19px rgba(0, 0, 0, 0.75);
-    box-shadow: 11px 11px 18px -19px rgba(0, 0, 0, 0.75);
-    text-align: justify;
-}
-
-
-
+/* Formulário */
 .formulario {
     background-color: rgb(66, 57, 44);
     margin: 0 auto;
     border-radius: 20px;
     display: block;
     text-align: center;
-    width: 20%;
+    width: 80%; /* Ajuste de largura para telas menores */
+    max-width: 400px;
     padding: 30px;
     border: solid 1px black;
 }
@@ -238,16 +198,6 @@ h2 {
     width: 100%;
     border-radius: 5px;
     height: 25px;
-
-}
-
-.subtitulo-form {
-    color: aliceblue;
-    padding: 10px;
-}
-
-h1 {
-    color: aliceblue;
 }
 
 .enviar {
@@ -258,12 +208,7 @@ h1 {
     background-color: chocolate;
 }
 
-.last {
-    padding: 5%;
-    background-image: url(https://jpimg.com.br/uploads/2023/03/ep_1_f4.jpg);
-
-}
-
+/* Ajuste para o rodapé */
 .footer {
     position: relative;
     bottom: 0;
@@ -273,19 +218,18 @@ h1 {
     color: #fff;
     padding: 20px;
     text-align: center;
-    margin-top: auto; /* Faz com que o rodapé vá para o final do conteúdo */
+    margin-top: auto;
 }
 
-/* Contêiner do rodapé e colunas */
 .footer-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Espaça as colunas igualmente */
+    justify-content: space-between;
 }
 
 .footer-column {
     flex: 1;
-    max-width: 200px; /* Limita a largura das colunas */
+    max-width: 200px;
     margin: 0 10px;
     padding: 10px;
     text-align: left;
@@ -319,7 +263,6 @@ h1 {
     text-decoration: underline;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -332,6 +275,7 @@ h1 {
     }
 }
 
+/* Clientes parceiros */
 .clientes-parceiros {
     margin: 0 auto;
     display: flex;
@@ -339,6 +283,7 @@ h1 {
     justify-content: center;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .A {
