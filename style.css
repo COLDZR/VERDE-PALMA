@@ -2,12 +2,14 @@
     text-decoration: none;
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total e altura */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura e altura totais */
 }
 
 body {
     background-color: aliceblue;
-    font-family: Arial, sans-serif; /* Definir uma fonte padrão */
+    font-family: Arial, sans-serif;
+    width: 100%; /* Garante que o body ocupe 100% da largura da tela */
+    overflow-x: hidden; /* Remove qualquer overflow horizontal */
 }
 
 .cabecalho {
@@ -16,11 +18,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    width: 100%; /* Garante que a largura seja 100% */
 }
 
 .cabecalho img {
     width: 150px;
     height: auto;
+    max-width: 100%; /* Evita que a imagem ultrapasse o tamanho da tela */
 }
 
 nav {
@@ -28,6 +32,7 @@ nav {
     display: flex;
     gap: 20px;
     align-items: center;
+    width: 100%;
 }
 
 nav ul {
@@ -43,6 +48,7 @@ nav ul a {
     font-size: 16px;
     display: block;
     padding: 10px;
+    max-width: 100%; /* Limita a largura dos links */
 }
 
 nav ul a:hover {
@@ -96,6 +102,7 @@ header hr {
 .icon-item img {
     max-width: 100px; /* Limita o tamanho da imagem para telas menores */
     height: auto;
+    max-width: 100%; /* Evita que a imagem ultrapasse a tela */
 }
 
 .icon-item .text {
@@ -114,7 +121,7 @@ header hr {
     text-align: center;
     padding: 20px;
     background-image: url("/VERDE-PALMA/assets/C.png");
-    background-size: cover; /* Faz com que a imagem de fundo se ajuste ao container */
+    background-size: cover;
 }
 
 .titulo-qs {
@@ -154,7 +161,8 @@ header hr {
     align-items: center;
     margin-top: 20px;
     padding: 30px;
-    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+    flex-wrap: wrap;
+    width: 100%; /* Garante que a seção de serviços ocupe 100% da largura */
 }
 
 .leia-mais {
@@ -173,7 +181,7 @@ header hr {
     padding: 1%;
     width: 100%;
     max-width: 300px;
-    height: auto; /* Remove a altura fixa para telas menores */
+    height: auto; /* Remove a altura fixa */
     border: solid 1px rgb(255, 255, 255);
     border-radius: 10%;
     box-shadow: 11px 11px 18px -19px rgba(0, 0, 0, 0.75);
@@ -225,11 +233,14 @@ header hr {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .footer-column {
     flex: 1;
-    max-width: 200px;
+    max-width: 200px; /* Limita a largura das colunas no desktop */
     margin: 0 10px;
     padding: 10px;
     text-align: left;
@@ -263,6 +274,7 @@ header hr {
     text-decoration: underline;
 }
 
+/* Responsividade para o footer */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -270,8 +282,20 @@ header hr {
     }
 
     .footer-column {
-        max-width: 100%;
-        margin-bottom: 20px;
+        max-width: 100%; /* Faz com que cada coluna ocupe toda a largura disponível */
+        margin-bottom: 20px; /* Adiciona espaço entre as colunas empilhadas */
+        padding: 0 20px; /* Aumenta o padding para uma melhor aparência */
+    }
+
+    .footer-column ul {
+        padding-left: 0;
+        text-align: center; /* Centraliza o texto para uma aparência melhor no mobile */
+    }
+
+    .footer-column strong {
+        text-align: center; /* Centraliza o título da coluna */
+        border: none; /* Remove a linha na versão mobile para visual mais limpo */
+        padding-bottom: 10px;
     }
 }
 
